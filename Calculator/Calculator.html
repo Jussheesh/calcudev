@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" type="text/css" href="des.css">
+    </head>
+<body>
+    <div id="calcu-container">
+    <span id="mem-indicator"></span>
+    <input type="text" id="display" readonly>
+        <div class="button-grid">
+            <button onclick="memoryClear()">MC</button>
+            <button onclick="memoryRecall()">MR</button>
+            <button onclick="memoryAdd()">M+</button>
+            <button onclick="memorySubtract()">M-</button>
+            <button onclick="clearEntry()" class="clear-btn">C</button>
+            <button onclick="allClear()" class="clear-btn">AC</button>
+            <button onclick="addString('/')">/</button>
+            <button onclick="addString('*')">*</button>
+            <button onclick="addString('7')">7</button>
+            <button onclick="addString('8')">8</button>
+            <button onclick="addString('9')">9</button>
+            <button onclick="addString('-')">-</button>
+            <button onclick="addString('4')">4</button>
+            <button onclick="addString('5')">5</button>
+            <button onclick="addString('6')">6</button>
+            <button onclick="addString('+')">+</button>
+            <button onclick="addString('1')">1</button>
+            <button onclick="addString('2')">2</button>
+            <button onclick="addString('3')">3</button>
+            <button onclick="calculate()" class="tall-btn">=</button>
+            <button onclick="addString('0')" class="wide-btn">0</button>
+            <button onclick="addString('.')">.</button>
+        </div>
+    </div>
+    <script src="calcu.js"></script>
+    </body>
+</html>
