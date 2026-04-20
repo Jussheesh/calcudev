@@ -1,0 +1,179 @@
+/* wiki-styles.css - Fandom Wiki Theme */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #e6e9ef; /* Fandom background tint */
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* Fandom Top Header */
+.fandom-header {
+    background-color: #002a32; /* Dark teal signature color */
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    border-bottom: 4px solid #ffc500; /* Fandom yellow accent */
+}
+
+.fandom-header h1 {
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* Main Layout Grid */
+.fandom-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+/* Sidebar Navigation */
+.fandom-sidebar {
+    width: 250px;
+    background-color: #1a1a1a;
+    color: #cccccc;
+    border-radius: 4px;
+    padding: 0;
+    align-self: flex-start;
+}
+
+.fandom-sidebar h3 {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 12px 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 2px solid #555555;
+}
+
+.fandom-sidebar ul {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.fandom-sidebar li a {
+    display: block;
+    color: #cccccc;
+    text-decoration: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.fandom-sidebar li a:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Main Content Area */
+.fandom-main {
+    flex: 1;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.fandom-main h1 {
+    font-family: 'Georgia', serif;
+    font-size: 2.2rem;
+    border-bottom: 1px solid #a2a9b1; /* Wikipedia standard line */
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+.fandom-main h2 {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.fandom-main h3 {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.fandom-main p {
+    margin-bottom: 15px;
+}
+
+.fandom-main a {
+    color: #0645ad; /* Wiki blue link */
+    text-decoration: none;
+}
+
+.fandom-main a:hover {
+    text-decoration: underline;
+}
+
+.fandom-main img {
+    border: 1px solid #cccccc;
+    padding: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    margin-bottom: 15px;
+    max-width: 100%;
+}
+
+.fandom-main ul {
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+
+.fandom-main li {
+    margin-bottom: 6px;
+}
+
+/* Table of Contents */
+.toc {
+    background-color: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    display: table;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.toc h3 {
+    margin-top: 0;
+    font-size: 1em;
+    text-align: center;
+}
+
+.toc ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.toc li {
+    margin-bottom: 2px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    color: #666666;
+    margin-top: 20px;
+    border-top: 1px solid #cccccc;
+}

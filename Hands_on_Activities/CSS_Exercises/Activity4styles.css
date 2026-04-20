@@ -1,0 +1,528 @@
+/* Activity4styles.css - Cinnamoroll Theme (Activity 4) */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(135deg, #e0f4ff 0%, #ffffff 100%);
+    color: #4a4a4a;
+    min-height: 100vh;
+}
+
+/* Header & Footer */
+.page-header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-bottom: 4px dashed #ffb6c1;
+    color: #89cff0;
+}
+
+.page-header p {
+    color: #ff9fb0;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.page-footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+    background-color: #ffffff;
+    border-top: 4px dashed #89cff0;
+    color: #ffb6c1;
+    font-weight: bold;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 40px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Base Card Style */
+.exercise-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(137, 207, 240, 0.15);
+    border: 2px solid #e0f4ff;
+    display: flex;
+    flex-direction: column;
+}
+
+.exercise-card h2 {
+    font-size: 1.1rem;
+    color: #89cff0;
+    border-bottom: 2px solid #ffb6c1;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.ex-content {
+    flex-grow: 1;
+    position: relative;
+    padding: 10px;
+}
+
+/* Helpers */
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.cinna-img {
+    width: 100%;
+    border-radius: 15px;
+    display: block;
+}
+
+
+
+/* 1. Styled Checkbox */
+.cinna-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #89cff0;
+    position: relative;
+}
+.cinna-checkbox input {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+}
+.checkmark {
+    width: 25px;
+    height: 25px;
+    background-color: #e0f4ff;
+    border: 2px solid #89cff0;
+    border-radius: 5px;
+    margin-right: 12px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cinna-checkbox input:checked ~ .checkmark {
+    background-color: #ffb6c1;
+    border-color: #ffb6c1;
+    transform: rotate(360deg);
+}
+
+/* 2. Text Selection */
+.custom-selection::selection {
+    background-color: #ffb6c1;
+    color: #ffffff;
+}
+
+/* 3. Image Overlay Hover */
+.image-overlay-container {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.overlay {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background-color: rgba(137, 207, 240, 0.8);
+    opacity: 0;
+    transition: 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image-overlay-container:hover .overlay {
+    opacity: 1;
+}
+.overlay-text {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* 4. Text on Top of Image */
+.text-on-image {
+    position: relative;
+}
+.bottom-left {
+    position: absolute;
+    bottom: 12px;
+    left: 16px;
+    background-color: rgba(255, 182, 193, 0.9);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+/* 5. Custom Nav Hover Effect */
+.cinna-nav {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+.cinna-nav a {
+    text-decoration: none;
+    color: #89cff0;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 20px;
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.cinna-nav a::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ffb6c1;
+    border-radius: 20px;
+    z-index: -1;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+.cinna-nav a:hover, .cinna-nav a:focus {
+    color: white;
+    transform: translateY(-3px);
+}
+.cinna-nav a:hover::before, .cinna-nav a:focus::before {
+    transform: scale(1);
+}
+
+/* 6. Perspective Transform Hover */
+.perspective-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #89cff0;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    transform-style: preserve-3d;
+}
+.perspective-btn:hover {
+    transform: perspective(400px) rotateX(15deg) translateY(-5px);
+    box-shadow: 0 15px 15px rgba(137, 207, 240, 0.4);
+}
+
+/* 7. Staggered List Animation */
+.staggered-list {
+    list-style: none;
+}
+.staggered-list li {
+    background-color: #e0f4ff;
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: #4a4a4a;
+    font-weight: bold;
+    animation: slideIn 0.5s ease backwards;
+}
+.staggered-list li:nth-child(1) { animation-delay: 0.1s; }
+.staggered-list li:nth-child(2) { animation-delay: 0.3s; }
+.staggered-list li:nth-child(3) { animation-delay: 0.5s; }
+.staggered-list li:nth-child(4) { animation-delay: 0.7s; }
+
+@keyframes slideIn {
+    0% { transform: translateX(-30px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+/* 8. Pulse Loader */
+.pulse-loader {
+    width: 20px;
+    height: 20px;
+    background-color: #ffb6c1;
+    border-radius: 50%;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+.pulse-loader:nth-child(1) { animation-delay: 0s; }
+.pulse-loader:nth-child(2) { animation-delay: 0.3s; }
+.pulse-loader:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes pulse {
+    0% { transform: scale(0.8); background-color: #ffb6c1; opacity: 0.5; }
+    100% { transform: scale(1.4); background-color: #89cff0; opacity: 1; }
+}
+
+/* 9. Bouncing Loader */
+.bounce-loader {
+    width: 20px;
+    height: 20px;
+    background-color: #89cff0;
+    border-radius: 50%;
+    animation: bounce 0.6s infinite alternate;
+}
+.bounce-loader:nth-child(2) { animation-delay: 0.2s; background-color: #ffb6c1;}
+.bounce-loader:nth-child(3) { animation-delay: 0.4s; background-color: #e0f4ff;}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+/* 10. Rotate Image Hover */
+.rotate-img {
+    width: 150px;
+    border-radius: 50%;
+    border: 5px solid #ffb6c1;
+    transition: transform 0.6s ease-in-out;
+}
+.rotate-img:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+
+/* 11. Animated Underline */
+.animated-underline {
+    position: relative;
+    text-decoration: none;
+    color: #89cff0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.animated-underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffb6c1;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+.animated-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* 12. Horizontal Snap Scroll */
+.snap-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+    padding-bottom: 10px;
+}
+.snap-item {
+    flex: 0 0 80%;
+    height: 120px;
+    background-color: #e0f4ff;
+    scroll-snap-align: center;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    border: 3px solid #89cff0;
+}
+
+/* 13. Clearfix */
+.clearfix-box {
+    border: 2px dashed #ffb6c1;
+    padding: 15px;
+    border-radius: 12px;
+}
+/* The modern clearfix */
+.clearfix-box::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.float-left {
+    float: left;
+    background: #89cff0;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+.float-right {
+    float: right;
+    background: #ffb6c1;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* 14. Input Visual Prefix */
+.input-prefix-box {
+    display: flex;
+    border: 2px solid #89cff0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.input-prefix-box .prefix {
+    background-color: #e0f4ff;
+    color: #89cff0;
+    padding: 10px 15px;
+    font-weight: bold;
+    border-right: 2px solid #89cff0;
+}
+.input-prefix-box input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px 15px;
+    outline: none;
+    color: #4a4a4a;
+    font-family: inherit;
+}
+
+/* 15. Focus-within form */
+.focus-form {
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px dashed #cccccc;
+    transition: background-color 0.4s, border-color 0.4s;
+    background-color: white;
+}
+.focus-form:focus-within {
+    background-color: #fff0f5;
+    border-color: #ffb6c1;
+    border-style: solid;
+}
+.focus-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #89cff0;
+}
+.focus-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+}
+.focus-form input:focus {
+    border-color: #89cff0;
+}
+
+/* 16. Custom Scrollbar */
+.custom-scrollbox {
+    height: 150px;
+    overflow-y: scroll;
+    background-color: #e0f4ff;
+    padding: 15px;
+    border-radius: 12px;
+}
+.custom-scrollbox p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #4a4a4a;
+    font-weight: bold;
+}
+/* Webkit Scrollbar Customization */
+.custom-scrollbox::-webkit-scrollbar {
+    width: 12px;
+}
+.custom-scrollbox::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-radius: 6px;
+}
+.custom-scrollbox::-webkit-scrollbar-thumb {
+    background-color: #ffb6c1;
+    border-radius: 6px;
+    border: 3px solid #ffffff;
+}
+
+/* 17. Fade Siblings */
+.fade-siblings {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+/* The list container listens for hover */
+.fade-siblings:hover li {
+    opacity: 0.3;
+}
+/* Only the hovered li gets opacity 1 */
+.fade-siblings li {
+    padding: 10px 20px;
+    background-color: #89cff0;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+.fade-siblings li:hover {
+    opacity: 1;
+}
+
+/* 18. Flex Even Distribute */
+.flex-even {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #f7fcff;
+    height: 120px;
+    border-radius: 12px;
+}
+.box-sm {
+    width: 50px;
+    height: 50px;
+    background-color: #ffb6c1;
+    border-radius: 10px;
+}
+
+/* 19. Center Display Table */
+.table-container {
+    display: table;
+    width: 100%;
+    height: 150px;
+    background-color: #e0f4ff;
+    border-radius: 15px;
+}
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.table-centered-item {
+    display: inline-block;
+    background-color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 2rem;
+    border: 3px solid #89cff0;
+}
+
+/* 20. Center Flexbox */
+.flex-exact-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    background-color: #fff0f5;
+    border-radius: 15px;
+}
+.flex-centered-item {
+    background-color: #ffb6c1;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 5px 10px rgba(255, 182, 193, 0.4);
+}
